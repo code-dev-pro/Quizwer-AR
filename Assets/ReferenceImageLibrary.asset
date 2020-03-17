@@ -14,4 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GuidLow: 4754263810353179942
   m_GuidHigh: 17800797657892648086
-  m_Images: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5104532521126149333
+      m_GuidHigh: 14473625035694480259
+    m_SerializedTextureGuid:
+      m_GuidLow: 308885624248257515
+      m_GuidHigh: 13669911582684896442
+    m_Size: {x: 0.07188755, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: CarteAtomeCarbone
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5558097973409686746
+      m_GuidHigh: 3527949711573101711
+    m_SerializedTextureGuid:
+      m_GuidLow: 7206368275148555616
+      m_GuidHigh: 13026524952140865323
+    m_Size: {x: 0.07188755, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: CarteAtomeHydrogene
+    m_Texture: {fileID: 0}
