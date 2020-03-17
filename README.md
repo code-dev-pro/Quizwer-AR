@@ -10,6 +10,7 @@
 
 </div>
 
+## Description
 Quizwer AR is an application allowing to visualize objects in augmented reality.
 
 ## Targets
