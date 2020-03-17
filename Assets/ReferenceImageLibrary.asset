@@ -29,8 +29,8 @@ MonoBehaviour:
       m_GuidLow: 5558097973409686746
       m_GuidHigh: 3527949711573101711
     m_SerializedTextureGuid:
-      m_GuidLow: 7206368275148555616
-      m_GuidHigh: 13026524952140865323
+      m_GuidLow: 2594657200563338464
+      m_GuidHigh: 5052494679447004696
     m_Size: {x: 0.07188755, y: 0.1}
     m_SpecifySize: 1
     m_Name: CarteAtomeHydrogene
@@ -39,8 +39,8 @@ MonoBehaviour:
       m_GuidLow: 5500963500122403172
       m_GuidHigh: 4066808980403567521
     m_SerializedTextureGuid:
-      m_GuidLow: 4933254178755055903
-      m_GuidHigh: 13794360363205320696
+      m_GuidLow: 12988501805619338057
+      m_GuidHigh: 4425663499762508683
     m_Size: {x: 0.07188755, y: 0.1}
     m_SpecifySize: 1
     m_Name: CartePlaneteSaturne

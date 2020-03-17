@@ -6,8 +6,7 @@ using UnityEngine.XR.ARFoundation;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class TrackedImagesManager : MonoBehaviour
 {
-   /*  [SerializeField]
-    private GameObject welcomePanel; */
+   
 
     [SerializeField]
     private Button infoButton; 
@@ -29,45 +28,37 @@ public class TrackedImagesManager : MonoBehaviour
  
     private bool show = false;
 
-    private bool applyScalingPerObject = true;
+    private bool applyRotatingPerObject = true;
 
     private Dictionary<string, GameObject> arObjects = new Dictionary<string, GameObject>();
 
     void Awake()
     {
         Application.targetFrameRate = 60;
-       // infoButton.onClick.AddListener(ShowInfo);
+  
         m_TrackedImageManager = GetComponent<ARTrackedImageManager>();
         
-        // setup all game objects in dictionary
+       
         foreach(GameObject arObject in arObjectsToPlace)
         {
             GameObject newARObject = Instantiate(arObject, Vector3.zero, Quaternion.identity);
             newARObject.name = arObject.name;
             newARObject.SetActive(false);
-            newARObject.transform.Find("Info").gameObject.SetActive(false);
+            //newARObject.transform.Find("Info").gameObject.SetActive(false);
             arObjects.Add(arObject.name, newARObject);
             
-            //childInstance = Instantiate<GameObject> (childPrefab);
-         //childInstance.transform.parent = transform;
-         //childInstance.transform.localPosition = Vector3.zero;
-         //childInstance.transform.localScale = new Vector3(0, 0, 0);
-         //childInstance.SetActive(false);
         }
     }
 
     public void RotationChanged(float newValue)
     {
-        if(applyScalingPerObject){
+        if(applyRotatingPerObject){
             if(placedObject != null)
             {
                 placedObject.transform.rotation = Quaternion.Euler(0,newValue*360,0);;
             }
         }
-       // else 
-           // aRSessionOrigin.transform.localScale = Vector3.one * newValue;
-
-       // scaleTextValue.text = $"Scale {newValue}";
+       
     }
 
     void OnEnable()
@@ -107,30 +98,26 @@ public class TrackedImagesManager : MonoBehaviour
         {
             arObjects[trackedImage.name].SetActive(false);
             displayInfo("");
-            
             Destroy(trackedImage.gameObject);
-           // Destroy(arObjects[trackedImage.name]);
+
         } 
     }
 
 
     private void displayInfo (string txt="") {
-         if(txt=="CO") {
-            imageTrackedText.text = "Monoxyde de carbone";
-            infoTrackedText.text = "CO";
-        } else if(txt=="O") {
-            imageTrackedText.text = "Oxygène";
-            infoTrackedText.text = "O";
-        } else if(txt=="C") {
-            imageTrackedText.text = "Carbone";
+          if(txt=="CarteAtomeCarbone") {
+            imageTrackedText.text = "Atome de carbone";
             infoTrackedText.text = "C";
-        } else if(txt=="PlantCell") {
-            imageTrackedText.text = "Cellule végétale";
+        } else if(txt=="CarteAtomeHydrogene") {
+            imageTrackedText.text = "Atome d'hydrogène";
+            infoTrackedText.text = "H";
+        } else if(txt=="CartePlaneteSaturne") {
+            imageTrackedText.text = "Planète Saturne";
             infoTrackedText.text = "";
-        }else {
+        } else {
             imageTrackedText.text = "";
             infoTrackedText.text = ""; 
-        }
+        } 
 
     }
 
@@ -139,11 +126,7 @@ public class TrackedImagesManager : MonoBehaviour
     private void UpdateARImage(ARTrackedImage trackedImage)
     {
        
-        // Display the name and info of the tracked image in the canvas
-        //displayInfo(trackedImage.referenceImage.name);
-        
-        Debug.Log($"trackedImage.referenceImage.name: {trackedImage.referenceImage.name}");
-        Debug.Log($"trackedImage.referenceImage.name: {trackedImage.trackingState}");
+       
         AssignGameObject(trackedImage.referenceImage.name, trackedImage.transform.position);
         
         
@@ -162,7 +145,6 @@ public class TrackedImagesManager : MonoBehaviour
                 if(go.name != name)
                 {
                     go.SetActive(false);
-                   
                     go.transform.localScale = new Vector3(0, 0, 0);
                     displayInfo("");
                
@@ -173,9 +155,9 @@ public class TrackedImagesManager : MonoBehaviour
 
             goARObject.SetActive(true);
             if(show==true) {
-                 goARObject.transform.Find("Info").gameObject.SetActive(true);
+                // goARObject.transform.Find("Info").gameObject.SetActive(true);
             } else {
-                 goARObject.transform.Find("Info").gameObject.SetActive(false);
+                // goARObject.transform.Find("Info").gameObject.SetActive(false);
             };
            
             displayInfo(name);
