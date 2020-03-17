@@ -28,6 +28,7 @@ Quizwer AR is an application allowing to visualize objects in augmented reality.
 <img src="https://res.cloudinary.com/dx65nxpkq/image/upload/v1584468456/CarteAtomeCarbone_dwps8m.jpg"/>
 </a>
 </div>
+
 ## Requirements
 
 - **Unity** v2019.3.2f1
